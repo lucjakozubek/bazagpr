@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Anteny" Category="Table" Bounds="234.868333333334,315,77.47,25" Group="Collapsed" Label="Anteny" />
+    <Node Id="Anteny_Czestotliwosc" Category="Field" Description="text" Label="Czestotliwosc" />
+    <Node Id="Anteny_Id_ant" Category="Field Primary" Description="bigint" Label="Id_ant" />
+    <Node Id="Anteny_Opis" Category="Field Optional" Description="text" Label="Opis" />
+    <Node Id="Dane" Category="Table" Bounds="133.276666666667,150,67.5866666666666,25" Group="Collapsed" Label="Dane" />
+    <Node Id="Dane_Data" Category="Field" Description="date" Label="Data" />
+    <Node Id="Dane_Dl_prof" Category="Field" Description="real" Label="Dl_prof" />
+    <Node Id="Dane_Id_ant" Category="Field Foreign" Description="bigint" Label="Id_ant" />
+    <Node Id="Dane_Id_osoby" Category="Field Foreign" Description="bigint" Label="Id_osoby" />
+    <Node Id="Dane_Id_podl" Category="Field Foreign" Description="bigint" Label="Id_podl" />
+    <Node Id="Dane_Id_pogody" Category="Field Foreign" Description="bigint" Label="Id_pogody" />
+    <Node Id="Dane_Id_prof" Category="Field Primary" Description="bigint" Label="Id_prof" />
+    <Node Id="Dane_Id_proj" Category="Field Foreign" Description="bigint" Label="Id_proj" />
+    <Node Id="Dane_Liczba_tras" Category="Field" Description="bigint" Label="Liczba_tras" />
+    <Node Id="Dane_Markery" Category="Field Optional" Description="text" Label="Markery" />
+    <Node Id="Dane_Nazwa" Category="Field" Description="text" Label="Nazwa" />
+    <Node Id="Dane_Odl_m_trasami" Category="Field" Description="real" Label="Odl_m_trasami" />
+    <Node Id="Dane_Profil" Category="Field" Description="text" Label="Profil" />
+    <Node Id="Dane_Typ_prof" Category="Field Foreign" Description="bigint" Label="Typ_prof" />
+    <Node Id="Dane_Uwagi" Category="Field Optional" Description="text" Label="Uwagi" />
+    <Node Id="Dane_Wspol_konca" Category="Field Optional" Description="real" Label="Wspol_konca" />
+    <Node Id="Dane_Wspol_opisowe_konca" Category="Field" Description="text" Label="Wspol_opisowe_konca" />
+    <Node Id="Dane_Wspol_opisowe_pocz" Category="Field" Description="text" Label="Wspol_opisowe_pocz" />
+    <Node Id="Dane_Wspol_pocz" Category="Field Optional" Description="real" Label="Wspol_pocz" />
+    <Node Id="Database" Category="Database" Bounds="0,0,587.286666666667,360" Group="Expanded" Label="gprDB.db" />
+    <Node Id="Foto" Category="Table" Bounds="29.6450000000004,206,63.9866666666667,25" Group="Collapsed" Label="Foto" LayoutSettings="List" />
+    <Node Id="Foto_Czy_mapa" Category="Field" Bounds="60.8343347304596,19.5291463321609,73.2466666666667,25.96" Description="bit" Label="Czy_mapa" UseManualLocation="True" />
+    <Node Id="Foto_Id_fot" Category="Field Primary" Bounds="136.081002426271,47.4891457747078,50.0933333333334,25.96" Description="bigint" Label="Id_fot" UseManualLocation="True" />
+    <Node Id="Foto_Id_prof" Category="Field Foreign" Bounds="136.081000444215,19.5291463321609,57.2533333333333,25.96" Description="bigint" Label="Id_prof" UseManualLocation="True" />
+    <Node Id="Foto_Nazwa" Category="Field" Bounds="60.8343355436106,47.4891457747078,55.29,25.96" Description="text" Label="Nazwa" UseManualLocation="True" />
+    <Node Id="Foto_Opis" Category="Field" Bounds="60.8343360391246,75.4491429540901,50,25.96" Description="text" Label="Opis" UseManualLocation="True" />
+    <Node Id="Foto_Zdjecie" Category="Field" Bounds="60.8343349337474,103.409147756763,57.82,25.96" Description="image" Label="Zdjecie" UseManualLocation="True" />
+    <Node Id="Markery" Category="Table" Bounds="20,150,83.2766666666666,25.0000000000001" Group="Collapsed" Label="Markery" />
+    <Node Id="Markery_Id_mark" Category="Field Primary" Bounds="256.450531529051,45.7090536525183,61.82,25.96" Description="bigint" Label="Id_mark" UseManualLocation="True" />
+    <Node Id="Markery_Id_prof" Category="Field Foreign" Bounds="169.197198195718,45.7090536525183,57.2533333333333,25.96" Description="bigint" Label="Id_prof" UseManualLocation="True" />
+    <Node Id="Markery_Nazwa" Category="Field" Bounds="249.197198195718,-10.2509463474818,55.29,25.96" Description="text" Label="Nazwa" UseManualLocation="True" />
+    <Node Id="Markery_Nr_mark" Category="Field" Bounds="169.197198195718,101.669053652518,64.71,25.96" Description="bigint" Label="Nr_mark" UseManualLocation="True" />
+    <Node Id="Markery_Opis" Category="Field Optional" Bounds="169.197198195718,-10.2509463474818,50,25.96" Description="text" Label="Opis" UseManualLocation="True" />
+    <Node Id="Miejscowosc" Category="Table" Bounds="346.343333333333,95,106.873333333333,25" Group="Collapsed" Label="Miejscowosc" />
+    <Node Id="Miejscowosc_Id_miejsc" Category="Field Primary" Description="bigint" Label="Id_miejsc" />
+    <Node Id="Miejscowosc_Id_panstwo" Category="Field Foreign" Description="bigint" Label="Id_panstwo" />
+    <Node Id="Miejscowosc_Miejscowosc" Category="Field" Description="text" Label="Miejscowosc" />
+    <Node Id="Osoby" Category="Table" Bounds="236.588333333333,260,74.03,25" Group="Collapsed" Label="Osoby" />
+    <Node Id="Osoby_Id_osoby" Category="Field Primary" Description="bigint" Label="Id_osoby" />
+    <Node Id="Osoby_Imie" Category="Field" Description="text" Label="Imie" />
+    <Node Id="Osoby_Nazwisko" Category="Field" Description="text" Label="Nazwisko" />
+    <Node Id="Osoby_Stanowisko" Category="Field Optional" Description="text" Label="Stanowisko" />
+    <Node Id="Panstwo" Category="Table" Bounds="483.216666666667,95,84.0699999999999,25" Group="Collapsed" Label="Panstwo" />
+    <Node Id="Panstwo_Id_panstwo" Category="Field Primary" Description="bigint" Label="Id_panstwo" />
+    <Node Id="Panstwo_Panstwo" Category="Field" Description="text" Label="Panstwo" />
+    <Node Id="Podloze" Category="Table" Bounds="232.596666666667,205,82.0133333333333,24.9999999999999" Group="Collapsed" Label="Podloze" />
+    <Node Id="Podloze_Id_podl" Category="Field Primary" Description="bigint" Label="Id_podl" />
+    <Node Id="Podloze_Opis" Category="Field" Description="text" Label="Opis" />
+    <Node Id="Pogoda" Category="Table" Bounds="233.315,150,80.5766666666667,24.9999999999999" Group="Collapsed" Label="Pogoda" />
+    <Node Id="Pogoda_Id_pog" Category="Field Primary" Description="bigint" Label="Id_pog" />
+    <Node Id="Pogoda_Objaw" Category="Field" Description="text" Label="Objaw" />
+    <Node Id="Projekt" Category="Table" Bounds="235.035,95,77.1366666666668,24.9999999999999" Group="Collapsed" Label="Projekt" />
+    <Node Id="Projekt_Id_miejscowosc" Category="Field Foreign" Description="bigint" Label="Id_miejscowosc" />
+    <Node Id="Projekt_Id_proj" Category="Field Primary" Description="bigint" Label="Id_proj" />
+    <Node Id="Projekt_Klient" Category="Field Optional" Description="text" Label="Klient" />
+    <Node Id="Projekt_Nazwa_proj" Category="Field" Description="text" Label="Nazwa_proj" />
+    <Node Id="Projekt_Opis" Category="Field Optional" Description="text" Label="Opis" />
+    <Node Id="Typ_prof" Category="Table" Bounds="230.863333333333,40,85.48,24.9999999999999" Group="Collapsed" Label="Typ_prof" />
+    <Node Id="Typ_prof_Id_typ" Category="Field Primary" Description="bigint" Label="Id_typ" />
+    <Node Id="Typ_prof_Typ" Category="Field" Description="text" Label="Typ" />
+  </Nodes>
+  <Links>
+    <Link Source="Anteny" Target="Anteny_Czestotliwosc" Category="Contains" />
+    <Link Source="Anteny" Target="Anteny_Id_ant" Category="Contains" />
+    <Link Source="Anteny" Target="Anteny_Opis" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Data" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Dl_prof" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Id_ant" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Id_osoby" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Id_podl" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Id_pogody" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Id_prof" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Id_proj" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Liczba_tras" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Markery" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Nazwa" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Odl_m_trasami" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Profil" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Typ_prof" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Uwagi" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Wspol_konca" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Wspol_opisowe_konca" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Wspol_opisowe_pocz" Category="Contains" />
+    <Link Source="Dane" Target="Dane_Wspol_pocz" Category="Contains" />
+    <Link Source="Dane_Id_ant" Target="Anteny_Id_ant" Category="Foreign Key" Label="FK_Dane_3_0" />
+    <Link Source="Dane_Id_osoby" Target="Osoby_Id_osoby" Category="Foreign Key" Label="FK_Dane_2_0" />
+    <Link Source="Dane_Id_podl" Target="Podloze_Id_podl" Category="Foreign Key" Label="FK_Dane_0_0" />
+    <Link Source="Dane_Id_pogody" Target="Pogoda_Id_pog" Category="Foreign Key" Label="FK_Dane_1_0" />
+    <Link Source="Dane_Id_proj" Target="Projekt_Id_proj" Category="Foreign Key" Label="FK_Dane_4_0" />
+    <Link Source="Dane_Typ_prof" Target="Typ_prof_Id_typ" Category="Foreign Key" Label="FK_Dane_5_0" />
+    <Link Source="Database" Target="Anteny" Category="Contains" />
+    <Link Source="Database" Target="Dane" Category="Contains" />
+    <Link Source="Database" Target="Foto" Category="Contains" />
+    <Link Source="Database" Target="Markery" Category="Contains" />
+    <Link Source="Database" Target="Miejscowosc" Category="Contains" />
+    <Link Source="Database" Target="Osoby" Category="Contains" />
+    <Link Source="Database" Target="Panstwo" Category="Contains" />
+    <Link Source="Database" Target="Podloze" Category="Contains" />
+    <Link Source="Database" Target="Pogoda" Category="Contains" />
+    <Link Source="Database" Target="Projekt" Category="Contains" />
+    <Link Source="Database" Target="Typ_prof" Category="Contains" />
+    <Link Source="Foto" Target="Foto_Czy_mapa" Category="Contains" />
+    <Link Source="Foto" Target="Foto_Id_fot" Category="Contains" />
+    <Link Source="Foto" Target="Foto_Id_prof" Category="Contains" />
+    <Link Source="Foto" Target="Foto_Nazwa" Category="Contains" />
+    <Link Source="Foto" Target="Foto_Opis" Category="Contains" />
+    <Link Source="Foto" Target="Foto_Zdjecie" Category="Contains" />
+    <Link Source="Foto_Id_prof" Target="Dane_Id_prof" Category="Foreign Key" Label="FK_Foto_0_0" />
+    <Link Source="Markery" Target="Markery_Id_mark" Category="Contains" />
+    <Link Source="Markery" Target="Markery_Id_prof" Category="Contains" />
+    <Link Source="Markery" Target="Markery_Nazwa" Category="Contains" />
+    <Link Source="Markery" Target="Markery_Nr_mark" Category="Contains" />
+    <Link Source="Markery" Target="Markery_Opis" Category="Contains" />
+    <Link Source="Markery_Id_prof" Target="Dane_Id_prof" Category="Foreign Key" Label="FK_Markery_0_0" />
+    <Link Source="Miejscowosc" Target="Miejscowosc_Id_miejsc" Category="Contains" />
+    <Link Source="Miejscowosc" Target="Miejscowosc_Id_panstwo" Category="Contains" />
+    <Link Source="Miejscowosc" Target="Miejscowosc_Miejscowosc" Category="Contains" />
+    <Link Source="Miejscowosc_Id_panstwo" Target="Panstwo_Id_panstwo" Category="Foreign Key" Label="FK_Miejscowosc_0_0" />
+    <Link Source="Osoby" Target="Osoby_Id_osoby" Category="Contains" />
+    <Link Source="Osoby" Target="Osoby_Imie" Category="Contains" />
+    <Link Source="Osoby" Target="Osoby_Nazwisko" Category="Contains" />
+    <Link Source="Osoby" Target="Osoby_Stanowisko" Category="Contains" />
+    <Link Source="Panstwo" Target="Panstwo_Id_panstwo" Category="Contains" />
+    <Link Source="Panstwo" Target="Panstwo_Panstwo" Category="Contains" />
+    <Link Source="Podloze" Target="Podloze_Id_podl" Category="Contains" />
+    <Link Source="Podloze" Target="Podloze_Opis" Category="Contains" />
+    <Link Source="Pogoda" Target="Pogoda_Id_pog" Category="Contains" />
+    <Link Source="Pogoda" Target="Pogoda_Objaw" Category="Contains" />
+    <Link Source="Projekt" Target="Projekt_Id_miejscowosc" Category="Contains" />
+    <Link Source="Projekt" Target="Projekt_Id_proj" Category="Contains" />
+    <Link Source="Projekt" Target="Projekt_Klient" Category="Contains" />
+    <Link Source="Projekt" Target="Projekt_Nazwa_proj" Category="Contains" />
+    <Link Source="Projekt" Target="Projekt_Opis" Category="Contains" />
+    <Link Source="Projekt_Id_miejscowosc" Target="Miejscowosc_Id_miejsc" Category="Foreign Key" Label="FK_Projekt_0_0" />
+    <Link Source="Typ_prof" Target="Typ_prof_Id_typ" Category="Contains" />
+    <Link Source="Typ_prof" Target="Typ_prof_Typ" Category="Contains" />
+  </Links>
+  <Categories>
+    <Category Id="Contains" Label="Zawiera" Description="Określa, czy źródło łącza zawiera obiekt docelowy" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Zawarte w" IsContainment="True" OutgoingActionLabel="Zawiera" />
+    <Category Id="Database" />
+    <Category Id="Field" />
+    <Category Id="Field Foreign" />
+    <Category Id="Field Optional" />
+    <Category Id="Field Primary" />
+    <Category Id="Foreign Key" />
+    <Category Id="Table" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="Description" Label="Opis" Description="Opis" DataType="System.String" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
+    <Property Id="Group" Label="Grupuj" Description="Wyświetlaj węzeł jako grupę" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="Label" Label="Etykieta" Description="Etykieta, którą można wyświetlić, obiektu Annotable." DataType="System.String" />
+    <Property Id="Layout" DataType="System.String" />
+    <Property Id="LayoutSettings" DataType="Microsoft.VisualStudio.Diagrams.View.GroupLayoutStyle" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+    <Property Id="ZoomLevel" DataType="System.String" />
+  </Properties>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Table" ValueLabel="True">
+      <Condition Expression="HasCategory('Table')" />
+      <Setter Property="Background" Value="#FFC0C0C0" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Schema" ValueLabel="True">
+      <Condition Expression="HasCategory('Schema')" />
+      <Setter Property="Background" Value="#FF7F9169" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field Primary" ValueLabel="True">
+      <Condition Expression="HasCategory('Field Primary')" />
+      <Setter Property="Background" Value="#FF008000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field Optional" ValueLabel="True">
+      <Condition Expression="HasCategory('Field Optional')" />
+      <Setter Property="Background" Value="#FF808040" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field Foreign" ValueLabel="True">
+      <Condition Expression="HasCategory('Field Foreign')" />
+      <Setter Property="Background" Value="#FF8080FF" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field" ValueLabel="True">
+      <Condition Expression="HasCategory('Field')" />
+      <Setter Property="Background" Value="#FFC0A000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Database" ValueLabel="True">
+      <Condition Expression="HasCategory('Database')" />
+      <Setter Property="Background" Value="#FFFFFFFF" />
+    </Style>
+  </Styles>
+</DirectedGraph>
