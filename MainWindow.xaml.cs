@@ -54,5 +54,17 @@ namespace bazagpr
         {
             MessageBox.Show("Closed");
         }
+
+        private void FillDataGrid()
+        {
+            SQLiteCommand cmd = con.CreateCommand();
+            cmd.CommandText = "select id_prof, Typ_prof, Nazwa from Dane"; //coś tu nie działa, bo nie pokazuje danych z bazy
+            cmd.CommandType = CommandType.Text;
+            SQLiteDataReader dr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            GPRDataGrid.ItemsSource = dt.DefaultView;
+            dr.Close();
+        }
     }
 }
