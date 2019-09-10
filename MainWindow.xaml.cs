@@ -55,16 +55,21 @@ namespace bazagpr
             MessageBox.Show("Closed");
         }
 
-        private void FillDataGrid()
+        private void FillDataGrid() //nie pokazuje od razu bazy danych, ale po odświeżeniu pokazuje
         {
             SQLiteCommand cmd = con.CreateCommand();
-            cmd.CommandText = "select id_prof, Typ_prof, Nazwa from Dane"; //coś tu nie działa, bo nie pokazuje danych z bazy
+            cmd.CommandText = "select id_prof, Typ_prof, Nazwa from Dane"; 
             cmd.CommandType = CommandType.Text;
             SQLiteDataReader dr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(dr);
             GPRDataGrid.ItemsSource = dt.DefaultView;
             dr.Close();
+        }
+
+        private void Refresh_btn_Click(object sender, RoutedEventArgs e)
+        {
+            this.FillDataGrid();
         }
     }
 }

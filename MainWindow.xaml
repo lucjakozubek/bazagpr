@@ -9,5 +9,8 @@
     <Grid>
         <DataGrid x:Name ="GPRDataGrid"  HorizontalAlignment="Left" Height="260"
                   Margin="10,67,0,0" VerticalAlignment="Top" Width="500"/>
+        <Button x:Name="refresh_btn" Content="Odśwież" HorizontalAlignment="Left"
+                Margin="20,20,0,0" VerticalAlignment="Top" Width="75"
+                RenderTransformOrigin="-0.267,1.6" Click="Refresh_btn_Click"/>
     </Grid>
 </Window>
