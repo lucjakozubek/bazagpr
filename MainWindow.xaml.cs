@@ -23,7 +23,7 @@ namespace bazagpr
     /// </summary>
     public partial class MainWindow : Window
     {
-        SQLiteConnection co = null;
+        SQLiteConnection con = null;
         public MainWindow()
         {
             SetConnection();
@@ -32,8 +32,8 @@ namespace bazagpr
 
         private void SetConnection()
         {
-            String connectionStrig = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
-            con = new SQLiteConnection(connectionString:);
+            String connectionString = ConfigurationManager.ConnectionStrings["bazagpr.Properties.Settings.ConnectionStringBazaGPR"].ConnectionString;
+            con = new SQLiteConnection(connectionString);
             try
             {
                 con.Open();
