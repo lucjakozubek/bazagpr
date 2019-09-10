@@ -5,6 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bazagpr"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" Closed="Window_Closed" WindowStartupLocation="CenterScreen">
-    <Grid/>
+        Title="Baza GPR" Height="450" Width="800" Loaded="Window_Loaded" Closed="Window_Closed" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DataGrid x:Name ="GPRDataGrid"  HorizontalAlignment="Left" Height="260"
+                  Margin="10,67,0,0" VerticalAlignment="Top" Width="500"/>
+    </Grid>
 </Window>
