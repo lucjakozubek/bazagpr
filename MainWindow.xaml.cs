@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Configuration;
+using System.Data;
+using System.Data.SQLite;
 
 namespace bazagpr
 {
@@ -20,9 +23,36 @@ namespace bazagpr
     /// </summary>
     public partial class MainWindow : Window
     {
+        SQLiteConnection co = null;
         public MainWindow()
         {
+            SetConnection();
             InitializeComponent();
+        }
+
+        private void SetConnection()
+        {
+            String connectionStrig = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
+            con = new SQLiteConnection(connectionString:);
+            try
+            {
+                con.Open();
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Błąd połączenia!!! " + exp.Message);
+                Application.Current.Shutdown();
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Loaded");
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            MessageBox.Show("Closed");
         }
     }
 }
