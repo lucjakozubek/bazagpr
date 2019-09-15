@@ -48,6 +48,7 @@ namespace bazagpr
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Loaded");
+            this.FillDataGrid();
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -58,7 +59,7 @@ namespace bazagpr
         private void FillDataGrid() //nie pokazuje od razu bazy danych, ale po odświeżeniu pokazuje
         {
             SQLiteCommand cmd = con.CreateCommand();
-            cmd.CommandText = "select id_prof, Typ_prof, Nazwa from Dane"; 
+            cmd.CommandText = "select id_prof, Typ_prof, Nazwa, Profil from Dane"; 
             cmd.CommandType = CommandType.Text;
             SQLiteDataReader dr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
