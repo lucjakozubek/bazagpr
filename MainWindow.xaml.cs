@@ -72,5 +72,10 @@ namespace bazagpr
         {
             this.FillDataGrid();
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
