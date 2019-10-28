@@ -50,13 +50,14 @@ namespace bazagpr
             MessageBox.Show("Loaded");
             this.FillDataGrid();
         }
-
+        //Window_Closed tylko pokazuje komunikat po zamknięciu aplikacji, że została zamknięta.
+        /*
         private void Window_Closed(object sender, EventArgs e)
         {
             MessageBox.Show("Closed");
         }
-
-        private void FillDataGrid() //nie pokazuje od razu bazy danych, ale po odświeżeniu pokazuje
+        */
+        private void FillDataGrid() //pokazuje wszystko, bez filtracji
         {
             SQLiteCommand cmd = con.CreateCommand();
             cmd.CommandText = "select id_prof, Typ_prof, Nazwa, Profil from Dane"; 
@@ -68,7 +69,7 @@ namespace bazagpr
             dr.Close();
         }
 
-        private void Refresh_btn_Click(object sender, RoutedEventArgs e)
+        private void Refresh_btn_Click(object sender, RoutedEventArgs e) //Odśwież
         {
             this.FillDataGrid();
         }
@@ -77,5 +78,19 @@ namespace bazagpr
         {
 
         }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e) //wrażliwość na zmiany na filtrach
+        {
+            DataGrid dg = sender as DataGrid;
+            DataRowView dr = dg.SelectedItem as DataRowView;
+            if (dr != null)
+            {
+                nazwa_txtbx.Text = dr["Nazwa"].ToString();
+                tp_cmbbx.Text = dr["Typ"].ToString();
+                data_date_picker.SelectedDate = DateTime.Parse(dr["Data"].ToString());
+            }
+        }
+
+
     }
 }
