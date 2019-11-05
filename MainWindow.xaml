@@ -5,13 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bazagpr"
         mc:Ignorable="d"
-        Title="Baza GPR" Height="450" Width="800" Loaded="Window_Loaded" Closed="Window_Closed" WindowStartupLocation="CenterScreen">
+        Title="Baza GPR" Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <Grid>
         <DataGrid x:Name ="GPRDataGrid"  HorizontalAlignment="Left" Height="260"
                   Margin="10,67,0,0" VerticalAlignment="Top" Width="480"/>
         <Button x:Name="refresh_btn" Content="Odśwież" HorizontalAlignment="Left"
                 Margin="20,20,0,0" VerticalAlignment="Top" Width="75"
                 RenderTransformOrigin="-0.267,1.6" Click="Refresh_btn_Click"/>
+        <Button x:Name="reset_btn" Content="Wyczyść" HorizontalAlignment="Left"
+                Margin="505,200,0,0" VerticalAlignment="Top" Width="75" Click="Reset_Button_Click"/>
+
         <Label Content="Nazwa:" HorizontalAlignment="Left" Margin="500,75,0,0" VerticalAlignment="Top"/>
         <Label Content="Data:" HorizontalAlignment="Left" Margin="500,110,0,0" VerticalAlignment="Top"/>
         <Label Content="Typ profilu:" HorizontalAlignment="Left" Margin="500,145,0,0" VerticalAlignment="Top"/>

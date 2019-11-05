@@ -49,6 +49,7 @@ namespace bazagpr
         {
             MessageBox.Show("Loaded");
             this.FillDataGrid();
+            this.ComboBox_SelectionChanged();
         }
         //Window_Closed tylko pokazuje komunikat po zamknięciu aplikacji, że została zamknięta.
         /*
@@ -76,8 +77,17 @@ namespace bazagpr
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            SQLiteCommand cmd = con.CreateCommand();
+            cmd.CommandText = "select Typ from Typ_prof";
+            cmd.CommandType = CommandType.Text;
+            SQLiteDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                tp_cmbbx.Items.Add(dr[0]);
+            }
         }
+
+
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e) //wrażliwość na zmiany na filtrach
         {
@@ -91,6 +101,37 @@ namespace bazagpr
             }
         }
 
+        private void ResetForm()
+        {
+            nazwa_txtbx.Text = "";
+            tp_cmbbx.Text = "";
+            data_date_picker.SelectedDate = null;
+        }
 
+        private void Reset_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.ResetForm();
+        }
+
+
+        /*private void FillTpComboBox()
+        {
+            //string SQLLite = "select Typ from Typ_prof";
+            SQLiteCommand cmd = con.CreateCommand();
+            cmd.CommandText = "select Typ from Typ_prof";
+            cmd.CommandType = CommandType.Text;
+            SQLiteDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                tp_cmbbx.Items.Add(dr[0]);
+            }
+           
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            GPRDataGrid.ItemsSource = dt.DefaultView;
+            dr.Close();
+            string[] typy = new string[] { "Typical", "Compact", "Custom" };
+            ComboBox1.Items.AddRange(installs);
+        }*/
     }
 }
