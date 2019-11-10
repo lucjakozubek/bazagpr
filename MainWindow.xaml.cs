@@ -49,7 +49,7 @@ namespace bazagpr
         {
             MessageBox.Show("Loaded");
             this.FillDataGrid();
-            this.ComboBox_SelectionChanged();
+            //this.ComboBox_SelectionChanged();
         }
         //Window_Closed tylko pokazuje komunikat po zamknięciu aplikacji, że została zamknięta.
         /*
@@ -61,7 +61,7 @@ namespace bazagpr
         private void FillDataGrid() //pokazuje wszystko, bez filtracji
         {
             SQLiteCommand cmd = con.CreateCommand();
-            cmd.CommandText = "select id_prof, Typ_prof, Nazwa, Profil from Dane"; 
+            cmd.CommandText = "select id_prof, Typ_prof, Nazwa, RD3 from Dane"; 
             cmd.CommandType = CommandType.Text;
             SQLiteDataReader dr = cmd.ExecuteReader();
             DataTable dt = new DataTable();

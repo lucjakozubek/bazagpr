@@ -10,7 +10,7 @@
         <DataGrid x:Name ="GPRDataGrid"  HorizontalAlignment="Left" Height="260"
                   Margin="10,67,0,0" VerticalAlignment="Top" Width="480"/>
         <Button x:Name="refresh_btn" Content="Odśwież" HorizontalAlignment="Left"
-                Margin="20,20,0,0" VerticalAlignment="Top" Width="75"
+                Margin="20,30,0,0" VerticalAlignment="Top" Width="75"
                 RenderTransformOrigin="-0.267,1.6" Click="Refresh_btn_Click"/>
         <Button x:Name="reset_btn" Content="Wyczyść" HorizontalAlignment="Left"
                 Margin="505,200,0,0" VerticalAlignment="Top" Width="75" Click="Reset_Button_Click"/>
@@ -24,6 +24,24 @@
         <DatePicker x:Name="data_date_picker" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="538,112,0,0" Width="112"/>
         <ComboBox x:Name="tp_cmbbx" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Margin="570,148,0,0" SelectionChanged="ComboBox_SelectionChanged"
                  Width="80"/>
-        
+        <!-- Menu górne rozwijane -->
+        <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="794" Margin="0,0,0,0">
+            <MenuItem Header="_Plik" Height="20" Width="75">
+                <!-- Pierwszy kafelek -->
+                <MenuItem x:Name="MenuNew" Header="_Nowy plik">
+                    <MenuItem.Icon>
+                        <Image Source="D://Studia/magisterka/bazagpr/icons/newfolder.png"/>
+                        <!-- Źródło ikony. Jak zrobić ścieżkę z . żeby działa? -->
+                    </MenuItem.Icon>
+                </MenuItem>
+
+            </MenuItem >
+            <MenuItem Header="_Info" Height="20" Width="75"> <!-- Drugi kafelek - z informacją o programie i źródłami ikon-->
+                <MenuItem.Icon>
+                    <Image Source="D://Studia/magisterka/bazagpr/icons/information.png" Height="12"/>
+                </MenuItem.Icon>
+            </MenuItem>
+        </Menu>
+
     </Grid>
 </Window>
