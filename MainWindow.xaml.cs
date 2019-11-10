@@ -44,13 +44,14 @@ namespace bazagpr
                 Application.Current.Shutdown();
             }
         }
-
+        //Window_Loaded pokazuje komunikat, że aplikacja została wczytana poprawnie i zaczytuje dane do grida.
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Loaded");
+            //MessageBox.Show("Loaded");
             this.FillDataGrid();
             //this.ComboBox_SelectionChanged();
         }
+
         //Window_Closed tylko pokazuje komunikat po zamknięciu aplikacji, że została zamknięta.
         /*
         private void Window_Closed(object sender, EventArgs e)
@@ -111,6 +112,12 @@ namespace bazagpr
         private void Reset_Button_Click(object sender, RoutedEventArgs e)
         {
             this.ResetForm();
+        }
+
+        private void OpenProject_btn_Click(object sender, RoutedEventArgs e) //Otwiera się nowe okno projektów
+        {
+            Projekty to = new Projekty();
+            to.ShowDialog(); //główne okno jest nieaktywne, póki się nie zamknnie okna pochodnego
         }
 
 

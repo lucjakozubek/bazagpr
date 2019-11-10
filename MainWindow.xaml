@@ -12,6 +12,11 @@
         <Button x:Name="refresh_btn" Content="Odśwież" HorizontalAlignment="Left"
                 Margin="20,30,0,0" VerticalAlignment="Top" Width="75"
                 RenderTransformOrigin="-0.267,1.6" Click="Refresh_btn_Click"/>
+        <!-- Pokaż projekty -->
+        <Button x:Name="openproject_btn" Content="Otwórz projekty" HorizontalAlignment="Left"
+                Margin="250,30,0,0" VerticalAlignment="Top" Width="100"
+                RenderTransformOrigin="-0.267,1.6" Click="OpenProject_btn_Click"/>
+        
         <Button x:Name="reset_btn" Content="Wyczyść" HorizontalAlignment="Left"
                 Margin="505,200,0,0" VerticalAlignment="Top" Width="75" Click="Reset_Button_Click"/>
 
@@ -26,17 +31,42 @@
                  Width="80"/>
         <!-- Menu górne rozwijane -->
         <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="794" Margin="0,0,0,0">
-            <MenuItem Header="_Plik" Height="20" Width="75">
-                <!-- Pierwszy kafelek -->
-                <MenuItem x:Name="MenuNew" Header="_Nowy plik">
+            <!-- Pierwszy kafelek - o projektach -->
+            <MenuItem Header="_Projekt" Height="20" Width="75">
+                <MenuItem x:Name="MenuNewProj" Header="_Nowy projekt">
+                    <!-- Dodanie nowego projektu -->
                     <MenuItem.Icon>
                         <Image Source="D://Studia/magisterka/bazagpr/icons/newfolder.png"/>
                         <!-- Źródło ikony. Jak zrobić ścieżkę z . żeby działa? -->
                     </MenuItem.Icon>
                 </MenuItem>
-
+                <MenuItem x:Name="MenuOpenProj" Header="_Otwórz projekt">
+                    <!-- Przeglądanie projektów -->
+                    <MenuItem.Icon>
+                        <Image Source="D://Studia/magisterka/bazagpr/icons/search.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem >
-            <MenuItem Header="_Info" Height="20" Width="75"> <!-- Drugi kafelek - z informacją o programie i źródłami ikon-->
+
+            <!-- Drugi kafelek - o profilach -->
+            <MenuItem Header="_Profil" Height="20" Width="75">
+                <MenuItem x:Name="MenuNewProf" Header="_Nowy profil">
+                    <!-- Dodanie nowego projektu -->
+                    <MenuItem.Icon>
+                        <Image Source="D://Studia/magisterka/bazagpr/icons/newfolder.png"/>
+                        <!-- Źródło ikony. Jak zrobić ścieżkę z . żeby działa? -->
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="MenuOpenProf" Header="_Otwórz profil">
+                    <!-- Przeglądanie projektów -->
+                    <MenuItem.Icon>
+                        <Image Source="D://Studia/magisterka/bazagpr/icons/search.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+
+            <!-- Trzeci kafelek - z informacją o programie i źródłami ikon-->
+            <MenuItem Header="_Info" Height="20" Width="75"> 
                 <MenuItem.Icon>
                     <Image Source="D://Studia/magisterka/bazagpr/icons/information.png" Height="12"/>
                 </MenuItem.Icon>
