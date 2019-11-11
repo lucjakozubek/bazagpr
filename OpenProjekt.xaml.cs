@@ -28,6 +28,7 @@ namespace bazagpr
         {
             SetConnection();
             InitializeComponent();
+            this.ProjFillDataGrid(); //To od razu ładuje DataGrid
         }
 
         //Stworzenie połączenia z bazą
@@ -46,7 +47,7 @@ namespace bazagpr
             }
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e) //Tutaj nic nic robi
         {
             this.ProjFillDataGrid();
             //this.ComboBox_SelectionChanged();
@@ -55,7 +56,8 @@ namespace bazagpr
         private void ProjFillDataGrid() //pokazuje wszystko, bez filtracji
         {
             SQLiteCommand cmd = con.CreateCommand();
-            cmd.CommandText = "select Nazwa_proj AS [Nazwa projektu], Wojewodztwo AS [Województwo], Miejscowosc AS [Miejscowość], Adres, Opis_miejsca AS [Opis miejsca], Prowadzacy AS [Prowadzący], Pogoda, War_geol AS [Warunki geologiczne], Zleceniodawca, Uwagi from Projekt INNER JOIN Wojewodztwo ON wojewodztwo.id_woj=projekt.id_woj"; //ma problem z pokazaniem daty
+            cmd.CommandText = "select Nazwa_proj AS [Nazwa projektu], cast(data as text) AS Data, Wojewodztwo AS [Województwo], Miejscowosc AS [Miejscowość], Adres, Opis_miejsca AS [Opis miejsca], Prowadzacy AS [Prowadzący], Pogoda, War_geol AS [Warunki geologiczne], Zleceniodawca, Uwagi from Projekt INNER JOIN Wojewodztwo ON wojewodztwo.id_woj=projekt.id_woj"; //ma problem z pokazaniem daty
+            //Data jest wyżej zamieniona na tekst, bo inaczej nie chciał czytać
             cmd.CommandType = CommandType.Text;
             SQLiteDataReader dr = cmd.ExecuteReader();
             DataSet ds = new DataSet();
@@ -63,6 +65,15 @@ namespace bazagpr
             dt.Load(dr);
             ProjGPRDataGrid.ItemsSource = dt.DefaultView;
             dr.Close();
+        }
+        private void ResetForm()
+        {
+            nazwaproj_txtbx.Text = "";
+            tpproj_cmbbx.Text = "";
+            dataproj_date_picker.SelectedDate = null;
+            //addproj_btn.IsEnabled = true;
+            //modproj_btn.IsEnabled = false;
+            //delproj_btn.IsEnabled = false;
         }
 
         private void Refreshproj_btn_Click(object sender, RoutedEventArgs e)
@@ -72,11 +83,23 @@ namespace bazagpr
 
         private void Resetproj_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            this.ResetForm();
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+        }
+
+        private void Addproj_btn_Click(object sender, RoutedEventArgs e)
+        {
+            string sqlite = @"insert Projekt(Nazwa_proj, Data, Adres, Opis_miejsca, Miejscowosc, Id_woj, Prowadzacy, Pogoda, War_geol, Zleceniodawca, Uwagi) " +
+                "VALUES(@nazwa, @data, @adres, @opis, @miejscowosc, @id_woj, @prowadzacy, @pogoda, @war_geol, @zleceiodawca, @uwagi)";
+            SQLiteCommand cmd = con.CreateCommand();
+            cmd.CommandText = sqlite;
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("nazwa", DbType.String, 100).Value = nazwaproj_txtbx.Text;
+            //próbuję dodać
 
         }
     }

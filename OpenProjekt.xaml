@@ -5,24 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bazagpr"
         mc:Ignorable="d"
-        Title="OpenProjekt" Height="450" Width="800">
+        Title="OpenProjekt" Height="500" Width="800">
     <Grid>
-        <DataGrid x:Name ="ProjGPRDataGrid"  HorizontalAlignment="Left" Height="260"
-                  Margin="10,67,0,0" VerticalAlignment="Top" Width="580"/>
-        <Button x:Name="refresh_btn" Content="Odśwież" HorizontalAlignment="Left"
-                Margin="20,30,0,0" VerticalAlignment="Top" Width="75"
-                RenderTransformOrigin="-0.267,1.6" Click="Refreshproj_btn_Click"/>
-        <Button x:Name="reset_btn" Content="Wyczyść" HorizontalAlignment="Left"
-                Margin="606,200,0,0" VerticalAlignment="Top" Width="75" Click="Resetproj_Button_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name ="ProjGPRDataGrid"  HorizontalAlignment="Left" Height="380"
+                  Margin="10,20,0,0" VerticalAlignment="Top" Width="540"/>
+        <!-- Czyści pola formatki -->
+        <Button x:Name="resetproj_btn" Content="Wyczyść formularz" HorizontalAlignment="Left"
+                Margin="615,360,0,0" VerticalAlignment="Top" Width="110" Click="Resetproj_Button_Click" Height="25"/>
+        <!-- Dodanie nowego projektu na podstawie wypełnionej formatki -->
+        <Button x:Name="addproj_btn" Content="Dodaj" HorizontalAlignment="Left" Height="25" 
+                Margin="580,395,0,0" VerticalAlignment="Top" Width="58" Click="Addproj_btn_Click"/>
+        <!-- Modyfikowanie zaznaczonego w DataGrid projektu na podstawie formularza-->
+        <Button x:Name="modproj_btn" Content="Modyfikuj" HorizontalAlignment="Left" Height="25" 
+                Margin="644,395,0,0" VerticalAlignment="Top" Width="58"/>
+        <!-- Odświeża widok grida na podstawie filtrów?-->
+        <Button x:Name="refreshproj_btn" Content="Filtruj" HorizontalAlignment="Left" Margin="708,395,0,0" 
+                VerticalAlignment="Top" Width="58" Click="Refreshproj_btn_Click" Height="25"/>
+        <!-- Usunięcie projektu klikniętego w DataGrid-->
+        <Button x:Name="delproj_btn" Content="Usuń projekt" HorizontalAlignment="Left" 
+                Height="25" Margin="630,430,0,0" VerticalAlignment="Top" Width="80"/>
 
-        <Label Content="Nazwa:" HorizontalAlignment="Left" Margin="601,75,0,0" VerticalAlignment="Top"/>
-        <Label Content="Data:" HorizontalAlignment="Left" Margin="601,110,0,0" VerticalAlignment="Top"/>
-        <Label Content="Typ profilu:" HorizontalAlignment="Left" Margin="601,145,0,0" VerticalAlignment="Top"/>
+        <!-- Formatka -->
+        <Label Content="Nazwa:" HorizontalAlignment="Left" Margin="570,20,0,0" VerticalAlignment="Top" Height="26" Width="48"/>
+        <Label Content="Data:" HorizontalAlignment="Left" Margin="570,50,0,0" VerticalAlignment="Top" Height="26" Width="37"/>
+        <Label Content="Województwo:" HorizontalAlignment="Left" Margin="570,85,0,0" VerticalAlignment="Top" Height="26" Width="88"/>
+        <Label Content="Miejscowość:" HorizontalAlignment="Left" Margin="570,120,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label Content="Adres:" HorizontalAlignment="Left" Margin="570,150,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label Content="Opis miejsca:" HorizontalAlignment="Left" Margin="570,180,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label Content="Prowadzący:" HorizontalAlignment="Left" Margin="570,210,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label Content="Pogoda:" HorizontalAlignment="Left" Margin="570,240,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label Content="War. geologiczne:" HorizontalAlignment="Left" Margin="570,270,0,0" VerticalAlignment="Top" Height="26" Width="105"/>
+        <Label Content="Zleceniodawca:" HorizontalAlignment="Left" Margin="570,300,0,0" VerticalAlignment="Top" Height="26" Width="90"/>
+        <Label Content="Uwagi:" HorizontalAlignment="Left" Margin="570,330,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
 
-        <TextBox x:Name="nazwa_txtbx" HorizontalAlignment="Left" Height="20" Margin="651,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"
-                 Width="100" RenderTransformOrigin="0.042,0.435"/>
-        <DatePicker x:Name="data_date_picker" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="639,112,0,0" Width="112"/>
-        <ComboBox x:Name="tp_cmbbx" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Margin="671,148,0,0" SelectionChanged="ComboBox_SelectionChanged"
-                 Width="80"/>
+        <TextBox x:Name="nazwaproj_txtbx" HorizontalAlignment="Left" Height="20" Margin="650,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"
+                 Width="120" RenderTransformOrigin="0.042,0.435"/>
+        <DatePicker x:Name="dataproj_date_picker" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="658,53,0,0" Width="112" Height="24"/>
+        <ComboBox x:Name="tpproj_cmbbx" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" 
+                  Margin="690,90,0,0" SelectionChanged="ComboBox_SelectionChanged" Width="80"/>
+        <TextBox x:Name="miejscowoscproj_txtbx" HorizontalAlignment="Left" Height="20" Margin="650,125,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="adresproj_txtbx" HorizontalAlignment="Left" Height="20" Margin="620,155,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="opismiejscaproj_txtbx" HorizontalAlignment="Left" Height="20" Margin="650,185,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="prowadzacyproj_txtbx" HorizontalAlignment="Left" Height="20" Margin="650,215,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="pogodaproj_txtbx" HorizontalAlignment="Left" Height="20" Margin="630,245,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140"/>
+        <TextBox x:Name="geolproj_txtbx" HorizontalAlignment="Left" Height="20" Margin="670,275,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="zlecproj_txtbx" HorizontalAlignment="Left" Height="20" Margin="660,305,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110"/>
+        <TextBox x:Name="uwagiproj_txtbx" HorizontalAlignment="Left" Height="20" Margin="620,335,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
     </Grid>
 </Window>
