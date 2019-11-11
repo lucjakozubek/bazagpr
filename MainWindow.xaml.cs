@@ -114,10 +114,17 @@ namespace bazagpr
             this.ResetForm();
         }
 
-        private void OpenProject_btn_Click(object sender, RoutedEventArgs e) //Otwiera się nowe okno projektów
+        //Otworzeie okna z profilami
+        private void OpenProfile_btn_Click(object sender, RoutedEventArgs e)
         {
-            Projekty to = new Projekty();
-            to.ShowDialog(); //główne okno jest nieaktywne, póki się nie zamknnie okna pochodnego
+            Profile to = new Profile();
+            to.ShowDialog();
+        }
+        //Otworzenie okna z projektami
+        private void OpenProj_btn_Click(object sender, RoutedEventArgs e)
+        {
+            OpenProjekt to = new OpenProjekt();
+            to.ShowDialog();
         }
 
 

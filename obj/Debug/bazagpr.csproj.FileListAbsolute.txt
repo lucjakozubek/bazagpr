@@ -36,4 +36,7 @@ D:\Studia\magisterka\bazagpr\obj\Debug\bazagpr.csproj.CoreCompileInputs.cache
 D:\Studia\magisterka\bazagpr\obj\Debug\bazagpr.csproj.CopyComplete
 D:\Studia\magisterka\bazagpr\obj\Debug\bazagpr.exe
 D:\Studia\magisterka\bazagpr\obj\Debug\bazagpr.pdb
-D:\Studia\magisterka\bazagpr\obj\Debug\bazagpr.Projekty.resources
+D:\Studia\magisterka\bazagpr\obj\Debug\Profile.g.cs
+D:\Studia\magisterka\bazagpr\obj\Debug\Profile.baml
+D:\Studia\magisterka\bazagpr\obj\Debug\OpenProjekt.g.cs
+D:\Studia\magisterka\bazagpr\obj\Debug\OpenProjekt.baml
