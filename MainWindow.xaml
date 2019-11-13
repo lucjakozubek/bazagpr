@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bazagpr"
         mc:Ignorable="d"
-        Title="Baza GPR" Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Icon="D://studia/magisterka/bazagpr/icons/documents_folder.ico">
+        Title="Baza GPR" Height="500" Width="700" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Icon="D://studia/magisterka/bazagpr/GPRdbico.ico">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
