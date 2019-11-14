@@ -98,8 +98,8 @@ namespace bazagpr
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //MessageBox.Show("Loaded");
-            this.FillDataGrid();
-
+            //this.FillDataGrid();
+            this.AddForms();
             //this.ComboBox_SelectionChanged();
         }
 
@@ -110,7 +110,7 @@ namespace bazagpr
             MessageBox.Show("Closed");
         }
         */
-        private void FillDataGrid() //pokazuje wszystko, bez filtracji
+        /*private void FillDataGrid() //pokazuje wszystko, bez filtracji
         {
             con.Open();
             SQLiteCommand cmd = con.CreateCommand();
@@ -122,12 +122,53 @@ namespace bazagpr
             GPRDataGrid.ItemsSource = dt.DefaultView;
             dr.Close();
             con.Close();
+        }*/
+        /// <summary>
+        /// AddForms wyświetla dane w formularzu i blokuje komórki do edycji.
+        /// Dane pochodzą z tabeli Projekt.
+        /// </summary>
+        private void AddForms ()
+        {
+            con.Open();
+            string sqlite = "select Nazwa_proj, Data, Adres, Opis_miejsca, " +
+                "Miejscowosc, Wojewodztwo, Prowadzacy, Pogoda, War_geol, Zleceniodawca, Uwagi " +
+                "from Projekt INNER JOIN Wojewodztwo ON Projekt.Id_woj = Wojewodztwo.Id_woj";
+            SQLiteCommand cmd = con.CreateCommand();
+            cmd.CommandText = sqlite;
+            cmd.CommandType = CommandType.Text;
+            SQLiteDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                nazwa_txtbx.Text = dr["Nazwa_proj"].ToString();
+                data_date_picker.Text = dr["Data"].ToString();
+                woj_cmbbx.Text = dr["Wojewodztwo"].ToString();
+                miejscowosc_txtbx.Text = dr["Miejscowosc"].ToString();
+                adres_txtbx.Text = dr["Adres"].ToString();
+                opis_txtbx.Text = dr["Opis_miejsca"].ToString();
+                prowadzacy_txtbx.Text = dr["Prowadzacy"].ToString();
+                pogoda_txtbx.Text = dr["Pogoda"].ToString();
+                geol_txtbx.Text = dr["War_geol"].ToString();
+                zlec_txtbx.Text = dr["Zleceniodawca"].ToString();
+                uwagi_txtbx.Text = dr["Uwagi"].ToString();
+            }
+            nazwa_txtbx.IsEnabled = false;
+            data_date_picker.IsEnabled = false;
+            woj_cmbbx.IsEnabled = false;
+            miejscowosc_txtbx.IsEnabled = false;
+            adres_txtbx.IsEnabled = false;
+            opis_txtbx.IsEnabled = false;
+            prowadzacy_txtbx.IsEnabled = false;
+            pogoda_txtbx.IsEnabled = false;
+            geol_txtbx.IsEnabled = false;
+            zlec_txtbx.IsEnabled = false;
+            uwagi_txtbx.IsEnabled = false;
+            con.Close();
         }
 
-        private void Refresh_btn_Click(object sender, RoutedEventArgs e) //Odśwież
+        /*private void Refresh_btn_Click(object sender, RoutedEventArgs e) //Odśwież
         {
             this.FillDataGrid();
-        }
+        }*/
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -137,7 +178,7 @@ namespace bazagpr
             SQLiteDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                tp_cmbbx.Items.Add(dr[0]);
+                woj_cmbbx.Items.Add(dr[0]);
             }
         }
 
@@ -150,7 +191,7 @@ namespace bazagpr
             if (dr != null)
             {
                 nazwa_txtbx.Text = dr["Nazwa"].ToString();
-                tp_cmbbx.Text = dr["Typ"].ToString();
+                woj_cmbbx.Text = dr["Wojewodztwo"].ToString();
                 data_date_picker.SelectedDate = DateTime.Parse(dr["Data"].ToString());
             }
         }
@@ -158,7 +199,7 @@ namespace bazagpr
         private void ResetForm()
         {
             nazwa_txtbx.Text = "";
-            tp_cmbbx.Text = "";
+            woj_cmbbx.Text = "";
             data_date_picker.SelectedDate = null;
         }
 
@@ -178,6 +219,32 @@ namespace bazagpr
         {
             OpenProjekt to = new OpenProjekt();
             to.ShowDialog();
+        }
+
+        private void MenuExit_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.DialogResult result = new System.Windows.Forms.DialogResult();
+            result = System.Windows.Forms.MessageBox.Show("Czy na pewno chcesz zamknąć aplikację?", "Zamykanie", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Exclamation);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                con.Close();
+                Application.Current.Shutdown();
+            }
+        }
+
+        private void mod_btn_Click(object sender, RoutedEventArgs e)
+        {
+            nazwa_txtbx.IsEnabled = true;
+            data_date_picker.IsEnabled = true;
+            woj_cmbbx.IsEnabled = true;
+            miejscowosc_txtbx.IsEnabled = true;
+            adres_txtbx.IsEnabled = true;
+            opis_txtbx.IsEnabled = true;
+            prowadzacy_txtbx.IsEnabled = true;
+            pogoda_txtbx.IsEnabled = true;
+            geol_txtbx.IsEnabled = true;
+            zlec_txtbx.IsEnabled = true;
+            uwagi_txtbx.IsEnabled = true;
         }
 
 

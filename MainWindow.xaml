@@ -10,58 +10,75 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name ="GPRDataGrid"  HorizontalAlignment="Left" Height="260"
-                  Margin="10,67,0,0" VerticalAlignment="Top" Width="480"/>
-        <Button x:Name="refresh_btn" Content="Odśwież" HorizontalAlignment="Left"
-                Margin="20,30,0,0" VerticalAlignment="Top" Width="75"
-                RenderTransformOrigin="-0.267,1.6" Click="Refresh_btn_Click"/>
-        <!-- Pokaż projekty -->
-        <Button x:Name="openproj_btn" Content="Otwórz projekty" HorizontalAlignment="Left"
-                Margin="250,30,0,0" VerticalAlignment="Top" Width="100"
-                RenderTransformOrigin="-0.267,1.6" Click="OpenProj_btn_Click"/>
-        <!-- Pokaż profile -->
-        <Button x:Name="openprof_btn" Content="Otwórz profile" HorizontalAlignment="Left"
-                Margin="451,30,0,0" VerticalAlignment="Top" Width="100"
-                RenderTransformOrigin="-0.267,1.6" Click="OpenProfile_btn_Click"/>
+        <!-- Formatka -->
+        <Label Content="Informacje o wczytanym projekcie" HorizontalAlignment="Left" Margin="255,50,0,0" VerticalAlignment="Top" Height="26" Width="190"/>
+        <Label Content="Nazwa projektu:" HorizontalAlignment="Left" Margin="50,95,0,0" VerticalAlignment="Top" Height="26" Width="100"/>
+        <Label Content="Data:" HorizontalAlignment="Left" Margin="50,125,0,0" VerticalAlignment="Top" Height="26" Width="37"/>
+        <Label Content="Województwo:" HorizontalAlignment="Left" Margin="50,155,0,0" VerticalAlignment="Top" Height="26" Width="88"/>
+        <Label Content="Miejscowość:" HorizontalAlignment="Left" Margin="50,185,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label Content="Adres:" HorizontalAlignment="Left" Margin="50,215,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label Content="Opis miejsca:" HorizontalAlignment="Left" Margin="50,285,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label Content="Prowadzący:" HorizontalAlignment="Left" Margin="50,355,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label Content="Pogoda:" HorizontalAlignment="Left" Margin="300,95,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label Content="Geologia:" HorizontalAlignment="Left" Margin="300,160,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label Content="Zleceniodawca:" HorizontalAlignment="Left" Margin="50,385,0,0" VerticalAlignment="Top" Height="26" Width="90"/>
+        <Label Content="Uwagi:" HorizontalAlignment="Left" Margin="300,225,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        
+        <!-- Pola tekstowe formatki -->
+        <TextBox x:Name="nazwa_txtbx" HorizontalAlignment="Left" Height="20" Margin="150,98,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"
+                 Width="120" />
+        <DatePicker x:Name="data_date_picker" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,127,0,0" Width="120" Height="24"/>
+        <ComboBox x:Name="woj_cmbbx" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" 
+                  Margin="150,158,0,0" SelectionChanged="ComboBox_SelectionChanged" Width="120"/>
+        <TextBox x:Name="miejscowosc_txtbx" HorizontalAlignment="Left" Height="20" Margin="150,188,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="adres_txtbx" HorizontalAlignment="Left" Height="60" Margin="150,218,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <TextBox x:Name="opis_txtbx" HorizontalAlignment="Left" Height="60" Margin="150,288,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <TextBox x:Name="prowadzacy_txtbx" HorizontalAlignment="Left" Height="20" Margin="150,358,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="pogoda_txtbx" HorizontalAlignment="Left" Height="60" Margin="380,98,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <TextBox x:Name="geol_txtbx" HorizontalAlignment="Left" Height="60" Margin="380,163,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <TextBox x:Name="zlec_txtbx" HorizontalAlignment="Left" Height="20" Margin="150,388,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="uwagi_txtbx" HorizontalAlignment="Left" Height="60" Margin="380,228,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <!--<Button x:Name="refresh_btn" Content="Odśwież" HorizontalAlignment="Left"
+                Margin="33,346,0,0" VerticalAlignment="Top" Width="75"
+                RenderTransformOrigin="-0.267,1.6"/>-->
 
-        <Button x:Name="reset_btn" Content="Wyczyść" HorizontalAlignment="Left"
-                Margin="506,200,0,0" VerticalAlignment="Top" Width="75" Click="Reset_Button_Click"/>
+        <Button x:Name="mod_btn" Content="Edytuj" HorizontalAlignment="Left"
+                Margin="380,320,0,0" VerticalAlignment="Top" Width="75" Click="mod_btn_Click"/>
 
-        <Label Content="Nazwa:" HorizontalAlignment="Left" Margin="501,75,0,0" VerticalAlignment="Top"/>
-        <Label Content="Data:" HorizontalAlignment="Left" Margin="501,110,0,0" VerticalAlignment="Top"/>
-        <Label Content="Typ profilu:" HorizontalAlignment="Left" Margin="501,145,0,0" VerticalAlignment="Top"/>
-
-        <TextBox x:Name="nazwa_txtbx" HorizontalAlignment="Left" Height="20" Margin="551,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"
-                 Width="100" RenderTransformOrigin="0.042,0.435"/>
-        <DatePicker x:Name="data_date_picker" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="539,112,0,0" Width="112"/>
-        <ComboBox x:Name="tp_cmbbx" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Margin="571,148,0,0" SelectionChanged="ComboBox_SelectionChanged"
-                 Width="80"/>
         <!-- Menu górne rozwijane -->
-        <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0">
+        <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="700" Margin="0,0,0,0">
             <!-- Pierwszy kafelek - o projektach -->
             <MenuItem Header="_Projekt" Height="20" Width="75">
-                <MenuItem x:Name="MenuNewProj" Header="_Nowy projekt">
+                <MenuItem x:Name="MenuNewProj" Header="_Coś">
                     <!-- Dodanie nowego projektu -->
                     <MenuItem.Icon>
                         <Image Source="D://Studia/magisterka/bazagpr/icons/newfolder.png"/>
                         <!-- Źródło ikony. Jak zrobić ścieżkę z . żeby działa? -->
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem x:Name="MenuOpenProj" Header="_Otwórz projekt">
+                <MenuItem x:Name="MenuExit" Header="_Zakończ" Click="MenuExit_Click">
                     <!-- Przeglądanie projektów -->
                     <MenuItem.Icon>
-                        <Image Source="D://Studia/magisterka/bazagpr/icons/search.png"/>
+                        <Image Source="D://Studia/magisterka/bazagpr/icons/exit.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem >
 
             <!-- Drugi kafelek - o profilach -->
             <MenuItem Header="_Profil" Height="20" Width="75">
-                <MenuItem x:Name="MenuNewProf" Header="_Nowy profil">
-                    <!-- Dodanie nowego projektu -->
+                <MenuItem x:Name="MenuNewProf" Header="_Dodaj profil">
+                    <!-- Dodanie nowego profilu -->
                     <MenuItem.Icon>
                         <Image Source="D://Studia/magisterka/bazagpr/icons/newfolder.png"/>
-                        <!-- Źródło ikony. Jak zrobić ścieżkę z . żeby działa? -->
+                        <!-- Źródło ikony. -->
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem x:Name="MenuOpenProf" Header="_Otwórz profil">
@@ -73,12 +90,36 @@
             </MenuItem>
 
             <!-- Trzeci kafelek - z informacją o programie i źródłami ikon-->
-            <MenuItem Header="_Info" Height="20" Width="75">
-                <MenuItem.Icon>
-                    <Image Source="D://Studia/magisterka/bazagpr/icons/information.png" Height="12"/>
-                </MenuItem.Icon>
+            <MenuItem Header="_Pomoc" Height="20" Width="75">
+                <MenuItem x:Name="MenuInfoInfo" Header="O programie">
+                    <MenuItem.Icon>
+                        <Image Source="D://Studia/magisterka/bazagpr/icons/help.png" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="MenuInfoHelp" Header="Autorzy grafik">
+                    <MenuItem.Icon>
+                        <Image Source="D://Studia/magisterka/bazagpr/icons/information.png" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
         </Menu>
+        <ToolBar HorizontalAlignment="Left" Height="30" Margin="0,20,0,0" VerticalAlignment="Top" Width="700" Background="LightGray">
+            <Button>
+                <Image x:Name="Dodajprofil" Source="D://Studia/magisterka/bazagpr/icons/newfile.png" ToolTip="Dodaj profil"/>
+            </Button>
+            <Button>
+                <Image x:Name="Otworzprofil" Source="D://Studia/magisterka/bazagpr/icons/openfile.png" ToolTip="Otwórz profil"/>
+            </Button>
+            <Separator/>
+            <Button>
+                <Image x:Name="Oprogramie" Source="D://Studia/magisterka/bazagpr/icons/help.png" ToolTip="O programie"/>
+            </Button>
+            <Separator/>
+            <Button Click="MenuExit_Click" ToolTip="Zamknij">
+                <Image x:Name="exit" Source="D://Studia/magisterka/bazagpr/icons/exit.png"/>
+            </Button>
+        </ToolBar>
+
 
     </Grid>
 </Window>
