@@ -99,6 +99,7 @@ namespace bazagpr
         {
             //MessageBox.Show("Loaded");
             //this.FillDataGrid();
+            this.ComboBox_Fill();
             this.AddForms();
             //this.ComboBox_SelectionChanged();
         }
@@ -170,16 +171,35 @@ namespace bazagpr
             this.FillDataGrid();
         }*/
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ComboBox_Fill()
         {
+            con.Open();
             SQLiteCommand cmd = con.CreateCommand();
-            cmd.CommandText = "select Typ from Typ_prof";
+            cmd.CommandText = "select id_woj, Wojewodztwo from Wojewodztwo";
             cmd.CommandType = CommandType.Text;
             SQLiteDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                woj_cmbbx.Items.Add(dr[0]);
+                woj_cmbbx.Items.Add(dr["Wojewodztwo"]);
             }
+            dr.Close();
+            con.Close();
+        }
+
+          private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            /*
+            con.Open();
+            SQLiteCommand cmd = con.CreateCommand();
+            cmd.CommandText = "select id_woj, Wojewodztwo from Wojewodztwo";
+            cmd.CommandType = CommandType.Text;
+            SQLiteDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                woj_cmbbx.Items.Add(dr["Wojewodztwo"]);
+            }
+            dr.Close();
+            con.Close();*/
         }
 
 
@@ -208,7 +228,7 @@ namespace bazagpr
             this.ResetForm();
         }
 
-        //Otworzeie okna z profilami
+        //Otworzenie okna z profilami
         private void OpenProfile_btn_Click(object sender, RoutedEventArgs e)
         {
             Profile to = new Profile();
@@ -234,6 +254,26 @@ namespace bazagpr
 
         private void mod_btn_Click(object sender, RoutedEventArgs e)
         {
+            con.Open();
+            string sqlite = "select Nazwa_proj FROM Projekt";
+            SQLiteCommand cmd = con.CreateCommand();
+            cmd.CommandText = sqlite;
+            cmd.CommandType = CommandType.Text;
+            SQLiteDataReader dr = cmd.ExecuteReader();
+            string nazwa = null;
+
+            if (dr.Read())
+            {
+                nazwa = dr["Nazwa_proj"].ToString();
+                //nazwa_txtbx.Text = dr["Nazwa_proj"].ToString();
+            }
+            if (nazwa == null)
+            {
+                String dir = Directory.GetCurrentDirectory(); //pobieram ścieżkę katalogu
+                DirectoryInfo info = new DirectoryInfo(dir);  //pobieram informacje o katalogu, w którym jest aplikacja
+                String nazwainfo = info.Name;
+                nazwa_txtbx.Text = nazwainfo;
+            }
             nazwa_txtbx.IsEnabled = true;
             data_date_picker.IsEnabled = true;
             woj_cmbbx.IsEnabled = true;
@@ -245,6 +285,7 @@ namespace bazagpr
             geol_txtbx.IsEnabled = true;
             zlec_txtbx.IsEnabled = true;
             uwagi_txtbx.IsEnabled = true;
+            con.Close();
         }
 
         private void fot_btn_Click(object sender, RoutedEventArgs e)
@@ -257,11 +298,35 @@ namespace bazagpr
 
         }
 
-        private void add_btn_Click(object sender, RoutedEventArgs e)
+        private void addproj_btn_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
+        private void OtworzProfil_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Przewijaj_Checked(object sender, RoutedEventArgs e)
+        {
+            adres_txtbx.IsEnabled = true;
+            adres_txtbx.IsEnabled = true;
+            opis_txtbx.IsEnabled = true;
+            pogoda_txtbx.IsEnabled = true;
+            geol_txtbx.IsEnabled = true;
+            uwagi_txtbx.IsEnabled = true;
+        }
+
+        private void NiePrzewijajChecked(object sender, RoutedEventArgs e)
+        {
+            adres_txtbx.IsEnabled = false;
+            adres_txtbx.IsEnabled = false;
+            opis_txtbx.IsEnabled = false;
+            pogoda_txtbx.IsEnabled = false;
+            geol_txtbx.IsEnabled = false;
+            uwagi_txtbx.IsEnabled = false;
+        }
 
         /*private void FillTpComboBox()
         {

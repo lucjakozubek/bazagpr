@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Profile" Height="450" Width="800">
     <Grid>
-        
+        <ProgressBar HorizontalAlignment="Left" Height="10" VerticalAlignment="Top" Width="100" Margin="139,251,0,0"/>
+
     </Grid>
 </Window>

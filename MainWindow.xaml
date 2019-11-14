@@ -53,16 +53,16 @@
         <Button x:Name="mod_btn" Content="Edytuj" HorizontalAlignment="Left"
                 Margin="380,320,0,0" VerticalAlignment="Top" Width="65" Click="mod_btn_Click"/>
 
-        <Button x:Name="add_btn" Content="Dodaj" HorizontalAlignment="Left" ToolTip="Dodaj zmiany w projekcie"
-                Margin="465,320,0,0" VerticalAlignment="Top" Width="65" Click="add_btn_Click" />
+        <Button x:Name="addproj_btn" Content="Dodaj" HorizontalAlignment="Left" ToolTip="Dodaj zmiany w projekcie"
+                Margin="465,320,0,0" VerticalAlignment="Top" Width="65" Click="addproj_btn_Click" />
         <!-- Menu górne rozwijane -->
         <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="700" Margin="0,0,0,0">
             <!-- Pierwszy kafelek - o projektach -->
             <MenuItem Header="_Projekt" Height="20" Width="75">
-                <MenuItem x:Name="MenuNewProj" Header="_Coś">
+                <MenuItem x:Name="MenuNewProj" Header="_Edytuj projekt" Click="mod_btn_Click">
                     <!-- Dodanie nowego projektu -->
                     <MenuItem.Icon>
-                        <Image Source="D://Studia/magisterka/bazagpr/icons/newfolder.png"/>
+                        <Image Source="D://Studia/magisterka/bazagpr/icons/edit.png"/>
                         <!-- Źródło ikony. Jak zrobić ścieżkę z . żeby działa? -->
                     </MenuItem.Icon>
                 </MenuItem>
@@ -107,10 +107,10 @@
         </Menu>
         <ToolBar HorizontalAlignment="Left" Height="30" Margin="0,20,0,0" VerticalAlignment="Top" Width="700" Background="LightGray">
             <Button>
-                <Image x:Name="Dodajprofil" Source="D://Studia/magisterka/bazagpr/icons/newfile.png" ToolTip="Dodaj profil"/>
+                <Image x:Name="Dodajprofil_btn" Source="D://Studia/magisterka/bazagpr/icons/newfile.png" ToolTip="Dodaj profil"/>
             </Button>
-            <Button>
-                <Image x:Name="Otworzprofil" Source="D://Studia/magisterka/bazagpr/icons/openfile.png" ToolTip="Otwórz profil"/>
+            <Button Click="OtworzProfil_btn_Click">
+                <Image x:Name="Otworzprofil_btn" Source="D://Studia/magisterka/bazagpr/icons/openfile.png" ToolTip="Otwórz profil"/>
             </Button>
             <Separator/>
             <Button>
@@ -131,6 +131,7 @@
             Margin="585,200,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="mapy_btn_Click">
             <Image x:Name="Mapy" Source="D://Studia/magisterka/bazagpr/icons/map.png" Height="40"/>
         </Button>
+        <CheckBox Content="Przewijaj" Margin="50,246,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" ToolTip="Przewijaj" Checked="Przewijaj_Checked" Unchecked="NiePrzewijajChecked"/>
 
     </Grid>
 </Window>
