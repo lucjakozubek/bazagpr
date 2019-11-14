@@ -51,8 +51,10 @@
                 RenderTransformOrigin="-0.267,1.6"/>-->
 
         <Button x:Name="mod_btn" Content="Edytuj" HorizontalAlignment="Left"
-                Margin="380,320,0,0" VerticalAlignment="Top" Width="75" Click="mod_btn_Click"/>
+                Margin="380,320,0,0" VerticalAlignment="Top" Width="65" Click="mod_btn_Click"/>
 
+        <Button x:Name="add_btn" Content="Dodaj" HorizontalAlignment="Left" ToolTip="Dodaj zmiany w projekcie"
+                Margin="465,320,0,0" VerticalAlignment="Top" Width="65" Click="add_btn_Click" />
         <!-- Menu górne rozwijane -->
         <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="700" Margin="0,0,0,0">
             <!-- Pierwszy kafelek - o projektach -->
@@ -120,6 +122,15 @@
             </Button>
         </ToolBar>
 
+        <Button x:Name="fot_btn" HorizontalAlignment="Left" ToolTip="Zdjęcia"
+            Margin="585,120,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="fot_btn_Click">
+            <Image x:Name="Foto" Source="D://Studia/magisterka/bazagpr/icons/photo.png" Height="40"/>
+        </Button>
+
+        <Button x:Name="mapy_btn"  HorizontalAlignment="Left" ToolTip="Mapy"
+            Margin="585,200,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="mapy_btn_Click">
+            <Image x:Name="Mapy" Source="D://Studia/magisterka/bazagpr/icons/map.png" Height="40"/>
+        </Button>
 
     </Grid>
 </Window>

@@ -247,6 +247,21 @@ namespace bazagpr
             uwagi_txtbx.IsEnabled = true;
         }
 
+        private void fot_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void mapy_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void add_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
 
         /*private void FillTpComboBox()
         {
