@@ -7,7 +7,36 @@
         mc:Ignorable="d"
         Title="Profile" Height="450" Width="800">
     <Grid>
-        <ProgressBar HorizontalAlignment="Left" Height="10" VerticalAlignment="Top" Width="100" Margin="139,251,0,0"/>
+        <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="700" Margin="0,0,0,0">
+            <!-- Pierwszy kafelek - o profilach -->
+            <MenuItem Header="_Profil" Height="20" Width="75">
+                <MenuItem x:Name="MenuNewProf" Header="_Dodaj profil" Click="MenuNewProf_Click" ToolTip="Dodaj profil">
+                    <!-- Dodanie nowego profilu -->
+                    <MenuItem.Icon>
+                        <Image Source="D://Studia/magisterka/bazagpr/icons/newfile.png"/>
+                        <!-- Źródło ikony. -->
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="MenuExit" Header="_Zakończ" Click="MenuExit_Click">
+                    <!-- Przeglądanie projektów -->
+                    <MenuItem.Icon>
+                        <Image Source="D://Studia/magisterka/bazagpr/icons/exit.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+
+            <!-- Trzeci kafelek - z informacją o programie i źródłami ikon-->
+            <MenuItem Header="_Pomoc" Height="20" Width="75">
+                <MenuItem x:Name="MenuInfoInfo" Header="O programie" Click="MenuInfoInfo_Click">
+                    <MenuItem.Icon>
+                        <Image Source="D://Studia/magisterka/bazagpr/icons/help.png" Height="12"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        
+        <ProgressBar HorizontalAlignment="Left" Height="10" VerticalAlignment="Top" Width="100" Margin="60,368,0,0"/>
+        <DataGrid HorizontalAlignment="Left" Height="186" VerticalAlignment="Top" Width="717" Margin="38,33,0,0"/>
 
     </Grid>
 </Window>

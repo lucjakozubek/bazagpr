@@ -7,62 +7,70 @@
         mc:Ignorable="d"
         Title="Baza GPR" Height="500" Width="700" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Icon="D://studia/magisterka/bazagpr/GPRdbico.ico">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <!-- Formatka -->
-        <Label Content="Informacje o wczytanym projekcie" HorizontalAlignment="Left" Margin="255,50,0,0" VerticalAlignment="Top" Height="26" Width="190"/>
-        <Label Content="Nazwa projektu:" HorizontalAlignment="Left" Margin="50,95,0,0" VerticalAlignment="Top" Height="26" Width="100"/>
+        <Label Content="Informacje o wczytanym projekcie" HorizontalAlignment="Left" Margin="255,55,0,0" VerticalAlignment="Top" Height="26" Width="190"/>
+        <Label Content="Nazwa projektu:" HorizontalAlignment="Left" Margin="50,90,0,0" VerticalAlignment="Top" Height="26" Width="100"/>
         <Label Content="Data:" HorizontalAlignment="Left" Margin="50,125,0,0" VerticalAlignment="Top" Height="26" Width="37"/>
-        <Label Content="Województwo:" HorizontalAlignment="Left" Margin="50,155,0,0" VerticalAlignment="Top" Height="26" Width="88"/>
-        <Label Content="Miejscowość:" HorizontalAlignment="Left" Margin="50,185,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
-        <Label Content="Adres:" HorizontalAlignment="Left" Margin="50,215,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
-        <Label Content="Opis miejsca:" HorizontalAlignment="Left" Margin="50,285,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
-        <Label Content="Prowadzący:" HorizontalAlignment="Left" Margin="50,355,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
-        <Label Content="Pogoda:" HorizontalAlignment="Left" Margin="300,95,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label Content="Województwo:" HorizontalAlignment="Left" Margin="50,160,0,0" VerticalAlignment="Top" Height="26" Width="88"/>
+        <Label Content="Miejscowość:" HorizontalAlignment="Left" Margin="50,195,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label Content="Adres:" HorizontalAlignment="Left" Margin="50,230,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label Content="Opis miejsca:" HorizontalAlignment="Left" Margin="50,305,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label Content="Prowadzący:" HorizontalAlignment="Left" Margin="50,380,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label Content="Zleceniodawca:" HorizontalAlignment="Left" Margin="50,415,0,0" VerticalAlignment="Top" Height="26" Width="90"/>
+        <Label Content="Pogoda:" HorizontalAlignment="Left" Margin="300,90,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
         <Label Content="Geologia:" HorizontalAlignment="Left" Margin="300,160,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
-        <Label Content="Zleceniodawca:" HorizontalAlignment="Left" Margin="50,385,0,0" VerticalAlignment="Top" Height="26" Width="90"/>
-        <Label Content="Uwagi:" HorizontalAlignment="Left" Margin="300,225,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
-        
+        <Label Content="Uwagi:" HorizontalAlignment="Left" Margin="300,230,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+
         <!-- Pola tekstowe formatki -->
-        <TextBox x:Name="nazwa_txtbx" HorizontalAlignment="Left" Height="20" Margin="150,98,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"
-                 Width="120" />
-        <DatePicker x:Name="data_date_picker" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,127,0,0" Width="120" Height="24"/>
+        <TextBox x:Name="nazwa_txtbx" HorizontalAlignment="Left" Height="20" Margin="150,93,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"
+                 Width="120" ToolTip="Sugerowana nazwa jest taka, jak nazwa katalogu"/>
+        <DatePicker x:Name="data_date_picker" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,128,0,0" Width="120" Height="24"/>
         <ComboBox x:Name="woj_cmbbx" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" 
-                  Margin="150,158,0,0" SelectionChanged="ComboBox_SelectionChanged" Width="120"/>
-        <TextBox x:Name="miejscowosc_txtbx" HorizontalAlignment="Left" Height="20" Margin="150,188,0,0" 
+                  Margin="150,165,0,0" SelectionChanged="ComboBox_SelectionChanged" Width="120"/>
+        <TextBox x:Name="miejscowosc_txtbx" HorizontalAlignment="Left" Height="20" Margin="150,198,0,0" 
                  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="adres_txtbx" HorizontalAlignment="Left" Height="60" Margin="150,218,0,0" 
+        <TextBox x:Name="adres_txtbx" HorizontalAlignment="Left" Height="60" Margin="150,233,0,0" 
                  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
-        <TextBox x:Name="opis_txtbx" HorizontalAlignment="Left" Height="60" Margin="150,288,0,0" 
+        <TextBox x:Name="opis_txtbx" HorizontalAlignment="Left" Height="60" Margin="150,308,0,0" 
                  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
-        <TextBox x:Name="prowadzacy_txtbx" HorizontalAlignment="Left" Height="20" Margin="150,358,0,0" 
+        <TextBox x:Name="prowadzacy_txtbx" HorizontalAlignment="Left" Height="20" Margin="150,383,0,0" 
                  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="pogoda_txtbx" HorizontalAlignment="Left" Height="60" Margin="380,98,0,0" 
-                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
-        <TextBox x:Name="geol_txtbx" HorizontalAlignment="Left" Height="60" Margin="380,163,0,0" 
-                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
-        <TextBox x:Name="zlec_txtbx" HorizontalAlignment="Left" Height="20" Margin="150,388,0,0" 
+        <TextBox x:Name="zlec_txtbx" HorizontalAlignment="Left" Height="20" Margin="150,418,0,0" 
                  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="uwagi_txtbx" HorizontalAlignment="Left" Height="60" Margin="380,228,0,0" 
+        <TextBox x:Name="pogoda_txtbx" HorizontalAlignment="Left" Height="60" Margin="380,93,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <TextBox x:Name="geol_txtbx" HorizontalAlignment="Left" Height="60" Margin="380,165,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <TextBox x:Name="uwagi_txtbx" HorizontalAlignment="Left" Height="60" Margin="380,233,0,0" 
                  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
         <!--<Button x:Name="refresh_btn" Content="Odśwież" HorizontalAlignment="Left"
                 Margin="33,346,0,0" VerticalAlignment="Top" Width="75"
                 RenderTransformOrigin="-0.267,1.6"/>-->
 
-        <Button x:Name="mod_btn" Content="Edytuj" HorizontalAlignment="Left"
-                Margin="380,320,0,0" VerticalAlignment="Top" Width="65" Click="mod_btn_Click"/>
-
-        <Button x:Name="addproj_btn" Content="Dodaj" HorizontalAlignment="Left" ToolTip="Dodaj zmiany w projekcie"
-                Margin="465,320,0,0" VerticalAlignment="Top" Width="65" Click="addproj_btn_Click" />
+        <Button x:Name="addproj_btn" Content="Zapisz zmiany" HorizontalAlignment="Left" ToolTip="Dodaj zmiany w projekcie"
+                Margin="380,320,0,0" VerticalAlignment="Top" Width="80" Click="addproj_btn_Click" Grid.Row="1" />
         <!-- Menu górne rozwijane -->
         <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="700" Margin="0,0,0,0">
             <!-- Pierwszy kafelek - o projektach -->
             <MenuItem Header="_Projekt" Height="20" Width="75">
-                <MenuItem x:Name="MenuNewProj" Header="_Edytuj projekt" Click="mod_btn_Click">
+                <MenuItem x:Name="MenuAddProj" Header="_Zapisz zmiany" Click="addproj_btn_Click" ToolTip="Zapisz zmiany w projekcie">
                     <!-- Dodanie nowego projektu -->
                     <MenuItem.Icon>
-                        <Image Source="D://Studia/magisterka/bazagpr/icons/edit.png"/>
+                        <Image Source="D://Studia/magisterka/bazagpr/icons/save.png"/>
+                        <!-- Źródło ikony. Jak zrobić ścieżkę z . żeby działa? -->
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="MenuFotoProj" Header="_Otwórz Zdjęcia" ToolTip="Otwórz zdjęcia projektu" Click="fot_btn_Click">
+                    <!-- Dodanie nowego projektu -->
+                    <MenuItem.Icon>
+                        <Image Source="D://Studia/magisterka/bazagpr/icons/photo1.png"/>
+                        <!-- Źródło ikony. Jak zrobić ścieżkę z . żeby działa? -->
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="MenuMapyProj" Header="_Otwórz mapy" ToolTip="Otwórz mapy projektu" Click="mapy_btn_Click">
+                    <!-- Dodanie nowego projektu -->
+                    <MenuItem.Icon>
+                        <Image Source="D://Studia/magisterka/bazagpr/icons/map1.png"/>
                         <!-- Źródło ikony. Jak zrobić ścieżkę z . żeby działa? -->
                     </MenuItem.Icon>
                 </MenuItem>
@@ -76,44 +84,40 @@
 
             <!-- Drugi kafelek - o profilach -->
             <MenuItem Header="_Profil" Height="20" Width="75">
-                <MenuItem x:Name="MenuNewProf" Header="_Dodaj profil">
+                <MenuItem x:Name="MenuNewProf" Header="_Dodaj profil" Click="MenuNewProf_Click">
                     <!-- Dodanie nowego profilu -->
                     <MenuItem.Icon>
-                        <Image Source="D://Studia/magisterka/bazagpr/icons/newfolder.png"/>
+                        <Image Source="D://Studia/magisterka/bazagpr/icons/newfile.png"/>
                         <!-- Źródło ikony. -->
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem x:Name="MenuOpenProf" Header="_Otwórz profil">
+                <MenuItem x:Name="MenuOpenProf" Header="_Otwórz profil" Click="MenuOpenProf_Click">
                     <!-- Przeglądanie projektów -->
                     <MenuItem.Icon>
-                        <Image Source="D://Studia/magisterka/bazagpr/icons/search.png"/>
+                        <Image Source="D://Studia/magisterka/bazagpr/icons/openfile.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
 
             <!-- Trzeci kafelek - z informacją o programie i źródłami ikon-->
             <MenuItem Header="_Pomoc" Height="20" Width="75">
-                <MenuItem x:Name="MenuInfoInfo" Header="O programie">
+                <MenuItem x:Name="MenuInfoInfo" Header="O programie" Click="MenuInfoInfo_Click">
                     <MenuItem.Icon>
                         <Image Source="D://Studia/magisterka/bazagpr/icons/help.png" Height="12"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem x:Name="MenuInfoHelp" Header="Autorzy grafik">
-                    <MenuItem.Icon>
-                        <Image Source="D://Studia/magisterka/bazagpr/icons/information.png" Height="12"/>
-                    </MenuItem.Icon>
-                </MenuItem>
             </MenuItem>
         </Menu>
-        <ToolBar HorizontalAlignment="Left" Height="30" Margin="0,20,0,0" VerticalAlignment="Top" Width="700" Background="LightGray">
-            <Button>
+        
+        <ToolBar HorizontalAlignment="Left" Height="30" Margin="0,20,0,0" VerticalAlignment="Top" Width="700" Background="LightGray" Grid.RowSpan="2">
+            <Button Click="MenuNewProf_Click">
                 <Image x:Name="Dodajprofil_btn" Source="D://Studia/magisterka/bazagpr/icons/newfile.png" ToolTip="Dodaj profil"/>
             </Button>
-            <Button Click="OtworzProfil_btn_Click">
+            <Button Click="MenuOpenProf_Click">
                 <Image x:Name="Otworzprofil_btn" Source="D://Studia/magisterka/bazagpr/icons/openfile.png" ToolTip="Otwórz profil"/>
             </Button>
             <Separator/>
-            <Button>
+            <Button Click="MenuInfoInfo_Click" ToolTip="O programie">
                 <Image x:Name="Oprogramie" Source="D://Studia/magisterka/bazagpr/icons/help.png" ToolTip="O programie"/>
             </Button>
             <Separator/>
@@ -123,15 +127,14 @@
         </ToolBar>
 
         <Button x:Name="fot_btn" HorizontalAlignment="Left" ToolTip="Zdjęcia"
-            Margin="585,120,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="fot_btn_Click">
-            <Image x:Name="Foto" Source="D://Studia/magisterka/bazagpr/icons/photo.png" Height="40"/>
+            Margin="585,100,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="fot_btn_Click" Grid.Row="1">
+            <Image x:Name="Foto" Source="D://Studia/magisterka/bazagpr/icons/photo1.png" Height="40"/>
         </Button>
 
         <Button x:Name="mapy_btn"  HorizontalAlignment="Left" ToolTip="Mapy"
-            Margin="585,200,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="mapy_btn_Click">
-            <Image x:Name="Mapy" Source="D://Studia/magisterka/bazagpr/icons/map.png" Height="40"/>
+            Margin="585,180,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="mapy_btn_Click" Grid.Row="1">
+            <Image x:Name="Mapy" Source="D://Studia/magisterka/bazagpr/icons/map1.png" Height="40"/>
         </Button>
-        <CheckBox Content="Przewijaj" Margin="50,246,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" ToolTip="Przewijaj" Checked="Przewijaj_Checked" Unchecked="NiePrzewijajChecked"/>
 
     </Grid>
 </Window>

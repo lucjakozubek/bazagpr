@@ -35,5 +35,9 @@ Exit
 
 Error
 Add
-
+Map
+Map2
+Photo
+Photo2
+Edit
 

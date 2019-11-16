@@ -1,7 +1,7 @@
 --
 -- Plik wygenerowany przez SQLiteStudio v3.2.1 dnia niedz. lis 10 15:38:35 2019
 --
--- U¿yte kodowanie tekstu: System
+-- U¿yte kodowanie tekstu: UTF-8
 --
 PRAGMA foreign_keys = off;
 BEGIN TRANSACTION;
