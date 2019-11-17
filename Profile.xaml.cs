@@ -32,17 +32,41 @@ namespace bazagpr
             InitializeComponent();
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e) //Tutaj nic nic robi
+        {
+            this.FillDataGrid();
+            MessageBox.Show("Załadowano");
+            //this.ComboBox_SelectionChanged();
+        }
+
         private void SetConnection()
         {
             String dir = Directory.GetCurrentDirectory(); //pobieram ścieżkę katalogu
             DirectoryInfo info = new DirectoryInfo(dir);  //pobieram informacje o katalogu, w którym jest aplikacja
 
             FileInfo[] fileList = info.GetFiles(); //pobieram informacje o wszystkich plikach w katalogu (nazwa i rozszerzenie)
-            bool isDbExist = false; //flaga
             String searchDb = info.Name + ".db";
             String databaseName = searchDb;
             String connectionString = "Data Source=./" + databaseName + ";version=3;datetimeformat=CurrentCulture;";
             con = new SQLiteConnection(connectionString);          
+        }
+        //Funkcja robiąca select na bazie
+        private SQLiteDataReader SelectFromDB(string sqlitequery)
+        {
+            SQLiteCommand cmd = con.CreateCommand();
+            cmd.CommandText = sqlitequery;
+            cmd.CommandType = CommandType.Text;
+            SQLiteDataReader dr = cmd.ExecuteReader();
+            return dr;
+        }
+
+        //funkcja wywołująca zapytanie sqlitowe
+        private void ExecuteQuery(string txtQuery)
+        {
+            SQLiteCommand cmd = con.CreateCommand();
+            cmd.CommandText = txtQuery;
+            cmd.CommandType = CommandType.Text;
+            cmd.ExecuteNonQuery();
         }
 
         private void MenuNewProf_Click(object sender, RoutedEventArgs e)
@@ -58,10 +82,25 @@ namespace bazagpr
 
         private void MenuInfoInfo_Click(object sender, RoutedEventArgs e)
         {
+            Common.InfoBox();
+        }
 
-            MessageBox.Show("Program BazaGPR został stworzony w 2019 roku jako składowa pracy magisterkiej. Służy do archiwizacji " +
-                "i porządkowania pomiarów georadarowych oraz informacji o nich. Dane są przechowywane w bazie SQLite. \n \n --- \n \n " +
-                "Autor: inż. Łucja Kozubek \n \n --- \n \n Autor ikon (Icons made by): Smashicons \n https://www.flaticon.com/authors/smashicons", "O programie");
+        private void FillDataGrid() //pokazuje wszystko, bez filtracji
+        {
+            con.Open();
+            string squlitequery = "SELECT Nazwa AS [Nazwa profilu], Typ AS [Typ profilu], Wspol_pocz AS [Współrzędne początku], " +
+                "Wspol_konca AS [Współrzędne końca], Wspol_opisowe_pocz AS [Współrzędne opisowe początku], " +
+                "Wspol_opisowe_konca AS [Współrzętne opisowe końca], Dl_prof AS [Długość profilu(m)], Liczba_tras AS [Liczba tras], " +
+                "Odl_m_trasami AS [Odległość między trasami(m)], Okno_czasowe AS [Okno czasowe(ns)], L_probek AS [Liczba próbek], " +
+                "Czest_prob AS [Częstotliwość próbkowania(ns)], Skladanie AS [Składanie], Czestotliwosc || ' ' || Konstrukcja AS [Antena], Uwagi " +
+                "FROM Anteny INNER JOIN Dane ON dane.id_ant = anteny.id_ant INNER JOIN Typ_prof ON typ_prof = id_typ";
+            SQLiteDataReader dr = SelectFromDB(squlitequery);
+            //DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            GPRDataGrid.ItemsSource = dt.DefaultView;
+            dr.Close();
+            con.Close();
         }
     }
 }

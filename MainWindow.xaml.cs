@@ -18,6 +18,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Globalization;
 
+
 namespace bazagpr
 {
     /// <summary>
@@ -26,6 +27,10 @@ namespace bazagpr
     public partial class MainWindow : Window
     {
         SQLiteConnection con = null;
+       /* public int Id {get; set; }
+        public String NazwaFoto {get; set; }
+        public byte[] FotoByte {get; set; }*/
+
         public MainWindow()
         {
             SetConnection();
@@ -127,7 +132,7 @@ namespace bazagpr
             con.Close();
         }*/
         /// <summary>
-        /// SelectFromDB to funckja do robienia selectu projektów, który się powtarza
+        /// SelectFromDB to funckja do robienia selectu na bazie
         /// </summary>
         private SQLiteDataReader SelectFromDB(string sqlitequery)
         {
@@ -266,9 +271,59 @@ namespace bazagpr
             }
         }
 
+        /*public Image ByteToImage(byte[] imageBytes)
+        {
+            System.Drawing.Image photo = new System.Drawing.Bitmap(@"..\..\Icons\add.png");
+            // Convert byte[] to Image
+            MemoryStream ms = new MemoryStream(imageBytes, 0, imageBytes.Length);
+            ms.Write(imageBytes, 0, imageBytes.Length);
+            Image image = new System.Drawing.Bitmap(ms);
+            return image;
+        }
+
+        private async Task<byte[]> ConvertImageToByte(StorageFile file)
+        {
+            using (var inputStream = await file.OpenSequetialReadAsync())
+            {
+                var readStream = inputStream.AsStreamForRead();
+                var byteArray = new byte[readStream.Length];
+                await readStream.ReadAsync(byteArray, 0, byteArray.Length);
+                return byteArray;
+            }
+        }
+
+        private async void AddPicture_Tapped(object sender, RoutedEventArgs e)
+        {
+            //Otwórz FileOpenPicker, żeby wybrać plik
+            FileOpenPicker picker = new FileOpenPicker();
+            picker.ViewMode = PickerViewMode.Thumbnail;
+
+        }*/
+
         private void fot_btn_Click(object sender, RoutedEventArgs e)
         {
             
+            /*
+            string query = "SELECT Photo FROM Table WHERE ID='5';";
+            string conString = @" Data Source = \Program Files\Users.s3db ";
+            SQLiteConnection con = new SQLiteConnection(conString);
+            SQLiteCommand cmd = new SQLiteCommand(query, con);
+            con.Open();
+            try
+            {
+                IDataReader rdr = cmd.ExecuteReader();
+                try
+                {
+                    while (rdr.Read())
+                    {
+                        byte[] a = (System.Byte[])rdr[0];
+                        pictureBox1.Image = ByteToImage(a);
+                    }
+                }
+                catch (Exception exc) { MessageBox.Show(exc.Message); }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            con.Close();*/
         }
 
         private void mapy_btn_Click(object sender, RoutedEventArgs e)
@@ -359,10 +414,7 @@ namespace bazagpr
 
         private void MenuInfoInfo_Click(object sender, RoutedEventArgs e)
         {
-            
-            MessageBox.Show("Program BazaGPR został stworzony w 2019 roku jako składowa pracy magisterkiej. Służy do archiwizacji " +
-                "i porządkowania pomiarów georadarowych oraz informacji o nich. Dane są przechowywane w bazie SQLite. \n \n --- \n \n " +
-                "Autor: inż. Łucja Kozubek \n \n --- \n \n Autor ikon (Icons made by): Smashicons \n https://www.flaticon.com/authors/smashicons", "O programie");
+            Common.InfoBox();
         }
 
 

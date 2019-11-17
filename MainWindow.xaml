@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="Baza GPR" Height="500" Width="700" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Icon="D://studia/magisterka/bazagpr/GPRdbico.ico">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="277*"/>
+            <ColumnDefinition Width="70*"/>
+        </Grid.ColumnDefinitions>
         <!-- Formatka -->
         <Label Content="Informacje o wczytanym projekcie" HorizontalAlignment="Left" Margin="255,55,0,0" VerticalAlignment="Top" Height="26" Width="190"/>
         <Label Content="Nazwa projektu:" HorizontalAlignment="Left" Margin="50,90,0,0" VerticalAlignment="Top" Height="26" Width="100"/>
@@ -48,9 +52,9 @@
                 RenderTransformOrigin="-0.267,1.6"/>-->
 
         <Button x:Name="addproj_btn" Content="Zapisz zmiany" HorizontalAlignment="Left" ToolTip="Dodaj zmiany w projekcie"
-                Margin="380,320,0,0" VerticalAlignment="Top" Width="80" Click="addproj_btn_Click" Grid.Row="1" />
+                Margin="380,320,0,0" VerticalAlignment="Top" Width="80" Click="addproj_btn_Click" />
         <!-- Menu górne rozwijane -->
-        <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="700" Margin="0,0,0,0">
+        <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="700" Margin="0,0,-6.4,0" Grid.ColumnSpan="2">
             <!-- Pierwszy kafelek - o projektach -->
             <MenuItem Header="_Projekt" Height="20" Width="75">
                 <MenuItem x:Name="MenuAddProj" Header="_Zapisz zmiany" Click="addproj_btn_Click" ToolTip="Zapisz zmiany w projekcie">
@@ -108,8 +112,8 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
-        
-        <ToolBar HorizontalAlignment="Left" Height="30" Margin="0,20,0,0" VerticalAlignment="Top" Width="700" Background="LightGray" Grid.RowSpan="2">
+
+        <ToolBar HorizontalAlignment="Left" Height="30" Margin="0,20,-6.4,0" VerticalAlignment="Top" Width="700" Background="LightGray" Grid.ColumnSpan="2">
             <Button Click="MenuNewProf_Click">
                 <Image x:Name="Dodajprofil_btn" Source="D://Studia/magisterka/bazagpr/icons/newfile.png" ToolTip="Dodaj profil"/>
             </Button>
@@ -127,12 +131,12 @@
         </ToolBar>
 
         <Button x:Name="fot_btn" HorizontalAlignment="Left" ToolTip="Zdjęcia"
-            Margin="585,100,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="fot_btn_Click" Grid.Row="1">
-            <Image x:Name="Foto" Source="D://Studia/magisterka/bazagpr/icons/photo1.png" Height="40"/>
+            Margin="31.1,100,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="fot_btn_Click" Grid.Column="1">
+            <Image x:Name="FotoButton" Source="D://Studia/magisterka/bazagpr/icons/photo1.png" Height="40"/>
         </Button>
 
         <Button x:Name="mapy_btn"  HorizontalAlignment="Left" ToolTip="Mapy"
-            Margin="585,180,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="mapy_btn_Click" Grid.Row="1">
+            Margin="31.1,180,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="mapy_btn_Click" Grid.Column="1">
             <Image x:Name="Mapy" Source="D://Studia/magisterka/bazagpr/icons/map1.png" Height="40"/>
         </Button>
 

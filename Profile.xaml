@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bazagpr"
         mc:Ignorable="d"
-        Title="Profile" Height="450" Width="800">
+        Title="Profile" Height="450" Width="700" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Icon="D://studia/magisterka/bazagpr/GPRdbico.ico">
     <Grid>
         <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="700" Margin="0,0,0,0">
             <!-- Pierwszy kafelek - o profilach -->
@@ -34,9 +34,10 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
-        
-        <ProgressBar HorizontalAlignment="Left" Height="10" VerticalAlignment="Top" Width="100" Margin="60,368,0,0"/>
-        <DataGrid HorizontalAlignment="Left" Height="186" VerticalAlignment="Top" Width="717" Margin="38,33,0,0"/>
+
+        <ProgressBar HorizontalAlignment="Left" Height="10" VerticalAlignment="Top" Width="580" Margin="60,368,0,0"/>
+        <DataGrid x:Name="GPRDataGrid" HorizontalAlignment="Left" Height="186" VerticalAlignment="Top" Width="670" Margin="10,33,0,0" FrozenColumnCount="1"/>
+        <ProgressBar HorizontalAlignment="Left" Height="10" Margin="-165,240,0,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>

@@ -39,3 +39,6 @@ D:\Studia\magisterka\bazagpr\obj\Debug\Profile.g.cs
 D:\Studia\magisterka\bazagpr\obj\Debug\Profile.baml
 D:\Studia\magisterka\bazagpr\obj\Debug\OpenProjekt.g.cs
 D:\Studia\magisterka\bazagpr\obj\Debug\OpenProjekt.baml
+D:\Studia\magisterka\bazagpr\bin\Debug\System.Runtime.WindowsRuntime.dll
+D:\Studia\magisterka\bazagpr\bin\Debug\Windows.WinMD
+D:\Studia\magisterka\bazagpr\bin\Debug\System.Runtime.WindowsRuntime.xml
